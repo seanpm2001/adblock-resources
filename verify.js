@@ -1,4 +1,4 @@
-const { readResources, defaultLists, regionalLists } = require('.')
+const { readResources, listCatalog } = require('.')
 
 const tap = require('tap')
 const { Engine, FilterFormat, FilterSet } = require('adblock-rs')
@@ -49,12 +49,7 @@ const testLists = (lists) => {
     })
 }
 
-tap.test('default filter lists are correctly formatted', childTest => {
-    testLists(defaultLists)
-    childTest.end()
-})
-
-tap.test('regional filter lists are correctly formatted', childTest => {
-    testLists(regionalLists)
+tap.test('filter list catalog is correctly formatted', childTest => {
+    testLists(listCatalog)
     childTest.end()
 })
